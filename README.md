@@ -5,6 +5,7 @@
 - Spring Data JPA
 - Lombok
 - PostgreSQL Driver o MySQL Driver
+- Spring Security (Opcional si se requiere un sistema de autenticación)
 3. Descargar y descomprimir el proyecto generado y abrir desde Intellij Idea, seleccionando el archivo ``build.gradle``.
 4. Configurar los datos del archivo ``application.properties``
 - spring.profiles.active => El entorno del proyecto que utilizara para la ejecución de las propiedades
@@ -46,4 +47,19 @@ spring.datasource.password=
 ```properties
 #Para poder ver el documento por ejemplo seria la ruta, tome en cuenta que dependera de la configuración que tiene en el context y el puerto de la api
 http://localhost:9090/platzi-market/api/swagger-ui/index.html
+```
+
+13. Instalar seguridad posterior a crear el proyecto debe agregar los siguientes registros en ``build.gradle``
+```properties
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+```
+
+13. Agregar oauth 0 al proyecto, dirigirse a la página https://jwt.io/, click en ``SEE JWT LIBRARIES``, posteriormente filtrar por ``Java``, en la opción ``maven: com.auth0 / java-jwt / 3.3.0``; ir al repositorio dando click en el icono de Github ``View Repo`` y finalmente dar click en la opción ``maven-central`` 
+```properties
+dependencies {
+    implementation 'com.auth0:java-jwt:4.3.0'
+}
 ```
